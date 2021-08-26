@@ -1,0 +1,15 @@
+- hosts: localhost
+  tasks:
+  - name: Deploy a Service
+    k8s:
+        state: present
+        definition: ""
+        validate_certs: false
+        namespace: default
+
+  - name: Deploy application
+    k8s:
+        state: present
+        validate_certs: false
+        namespace: default
+        definition: ""
